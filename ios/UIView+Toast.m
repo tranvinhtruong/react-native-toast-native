@@ -346,8 +346,8 @@ static const NSString * CSToastQueueKey             = @"CSToastQueueKey";
     if(messageLabel != nil) {
         messageRect.origin.x = imageRect.origin.x + imageRect.size.width + style.horizontalPadding;
         messageRect.origin.y = titleRect.origin.y + titleRect.size.height + style.verticalPadding;
-        messageRect.size.width = width;
-        messageRect.size.height = height;
+        messageRect.size.width = width + 48;
+        messageRect.size.height = height + 19;
     }
 
     CGFloat longerWidth = MAX(titleRect.size.width, messageRect.size.width);
