@@ -48,8 +48,8 @@ public class Toast extends ReactContextBaseJavaModule implements LifecycleEventL
         }
         final String backgroundColor = styles.hasKey("backgroundColor") ? styles.getString("backgroundColor") : "#000000";
         final String color = styles.hasKey("color") ? styles.getString("color") : "#ffffff";
-        final int width = styles.hasKey("width") ? styles.getInt("width") : 100;
-        final int height = styles.hasKey("height") ? styles.getInt("height") : 200;
+        // final int width = styles.hasKey("width") ? styles.getInt("width") : 100;
+        // final int height = styles.hasKey("height") ? styles.getInt("height") : 200;
         final int paddingLeft = styles.hasKey("paddingLeft") ? styles.getInt("paddingLeft") : 0;
         final int paddingRight = styles.hasKey("paddingRight") ? styles.getInt("paddingRight") : 0;
         final int paddingTop = styles.hasKey("paddingTop") ? styles.getInt("paddingTop") : 0;
@@ -57,7 +57,7 @@ public class Toast extends ReactContextBaseJavaModule implements LifecycleEventL
         final int fontSize = styles.hasKey("fontSize") ? styles.getInt("fontSize") : 12;
         final int lineHeight = styles.hasKey("lineHeight") ? styles.getInt("lineHeight") : 10;
         final int cornerRadius = styles.hasKey("borderRadius") ? styles.getInt("borderRadius") : 5;
-        final int lines = styles.hasKey("lines") ? styles.getInt("lines") : 3;
+        // final int lines = styles.hasKey("lines") ? styles.getInt("lines") : 3;
         final int borderWidth = styles.hasKey("borderWidth") ? styles.getInt("borderWidth") : 2;
         final int xOffset = styles.hasKey("xOffset") ? styles.getInt("xOffset") : 0;
         final int yOffset = styles.hasKey("yOffset") ? styles.getInt("yOffset") : 0;
@@ -75,13 +75,13 @@ public class Toast extends ReactContextBaseJavaModule implements LifecycleEventL
                 gd.setStroke(borderWidth, Color.parseColor(backgroundColor));
                 gd.setColor(Color.parseColor(backgroundColor));
                 gd.setCornerRadius(cornerRadius);
-                gd.setSize(width, height);
+                // gd.setSize(width, height);
                 view.setBackground(gd);
                 text.setTextColor(Color.parseColor(color));
                 text.setTextSize(fontSize);
-                text.setLines(lines);
-                text.setMaxLines(lines);
-                text.setHeight(lineHeight);
+                // text.setLines(lines);
+                // text.setMaxLines(lines);
+                // text.setHeight(lineHeight);
                 text.setLetterSpacing(letterSpacing);
                 text.setTypeface(Typeface.SANS_SERIF);
                 text.setPadding(paddingLeft, paddingTop, paddingRight, paddingBottom);
@@ -91,6 +91,7 @@ public class Toast extends ReactContextBaseJavaModule implements LifecycleEventL
                     text.setTypeface(Typeface.DEFAULT);
                 }
                 text.setGravity(Gravity.CENTER);
+                text.setLineSpacing(lineHeight, 1f);
                 toast.setView(view);
                 toast.setGravity(position, xOffset, yOffset);
                 toast.show();
