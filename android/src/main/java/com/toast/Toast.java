@@ -90,6 +90,7 @@ public class Toast extends ReactContextBaseJavaModule implements LifecycleEventL
                 }else{
                     text.setTypeface(Typeface.DEFAULT);
                 }
+                text.setGravity(Gravity.CENTER);
                 toast.setView(view);
                 toast.setGravity(position, xOffset, yOffset);
                 toast.show();
