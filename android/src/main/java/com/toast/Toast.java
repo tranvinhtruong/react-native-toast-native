@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
+import android.os.Build;
 import android.text.Layout;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -82,7 +83,9 @@ public class Toast extends ReactContextBaseJavaModule implements LifecycleEventL
                 // text.setLines(lines);
                 // text.setMaxLines(lines);
                 // text.setHeight(lineHeight);
-                text.setLetterSpacing(letterSpacing);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    text.setLetterSpacing(letterSpacing);
+                }
                 text.setTypeface(Typeface.SANS_SERIF);
                 text.setPadding(paddingLeft, paddingTop, paddingRight, paddingBottom);
                 if(fontWeight.equals("bold")){
